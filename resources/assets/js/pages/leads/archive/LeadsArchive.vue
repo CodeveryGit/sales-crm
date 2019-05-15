@@ -8,11 +8,6 @@
             <table class="table-body">
                 <thead>
                 <tr>
-                    <!--<th :class="sorted.name" @click="sorting('name')">lead name</th>-->
-                    <!--<th :class="sorted.client_name" @click="sorting('client_name')">client</th>-->
-                    <!--<th :class="sorted.manager_name" @click="sorting('manager_name')">manager</th>-->
-                    <!--<th :class="sorted.lead_type_name" @click="sorting('lead_type_name')">leadtype</th>-->
-
                     <th>{{$t('leads.lead_name')}}</th>
                     <th>{{$tc('models.clients',0)}}</th>
                     <th>{{$tc('models.managers',0)}}</th>
@@ -60,12 +55,6 @@
                 data: this.dataLeads,
                 filter: '',
                 paginate: ['data'],
-                // sorted: {
-                //     name: '',
-                //     client_name: '',
-                //     manager_name: '',
-                //     lead_type_name: '',
-                // }
             }
         },
         computed: {
@@ -77,20 +66,6 @@
             clientName(client){
                 return (client) ? client.name : 'No client';
             }
-            // sorting(column) {
-            //     (this.sorted[column] !== 'sort-desc') ? this.sortDesc(column) : this.sortAsc(column);
-            // },
-            //
-            // sortDesc(column) {
-            //     this.sorted[column] = 'sort-desc';
-            //     this.data.sort((a, b) => (a[column].toLowerCase() > b[column].toLowerCase()) ? 1 : -1);
-            // },
-            //
-            // sortAsc(column) {
-            //     this.sorted[column] = 'sort-asc';
-            //     this.data.sort((a, b) => (a[column].toLowerCase() < b[column].toLowerCase()) ? 1 : -1);
-            // },
-
         }
     }
 </script>
