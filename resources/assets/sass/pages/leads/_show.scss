@@ -1,0 +1,222 @@
+#leads-show {
+  .leads-header {
+    display: flex;
+    a.button {
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  .lead-info {
+    margin-top: 30px;
+
+    //display: flex;
+    .lead-name {
+    }
+    .lead-statuses {
+      display: flex;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-top: 10px;
+      .status {
+        width: 210px;
+        margin-right: 40px;
+        flex-shrink: 0;
+        padding-bottom: 15px;
+        position: relative;
+        cursor: pointer;
+
+        .status-name {
+          position: relative;
+          height: 46px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: $light-gray;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+          //color: #fff;
+          width: 187px;
+
+        }
+        .status-triangle {
+          width: 46px;
+          height: 46px;
+          top: 0;
+          right: 9px;
+          position: absolute;
+          clip: rect(auto, 150px, auto, 32px);
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            transform: rotate(-45deg);
+            background-color: $light-gray;
+          }
+        }
+
+        &.passed {
+          cursor: default;
+          &:nth-child(8n+1) {
+            .status-name {
+              background-image: $status-gradient-1;
+            }
+            .status-triangle::after {
+              background-image: $triangle-1;
+            }
+          }
+
+          &:nth-child(8n+2) {
+            .status-name {
+              background-image: $status-gradient-2;
+            }
+            .status-triangle::after {
+              background-image: $triangle-2;
+            }
+          }
+
+          &:nth-child(8n+3) {
+            .status-name {
+              background-image: $status-gradient-3;
+            }
+            .status-triangle::after {
+              background-image: $triangle-3;
+            }
+          }
+
+          &:nth-child(8n+4) {
+            .status-name {
+              background-image: $status-gradient-4;
+            }
+            .status-triangle::after {
+              background-image: $triangle-4;
+            }
+          }
+
+          &:nth-child(8n+5) {
+            .status-name {
+              background-image: $status-gradient-5;
+            }
+            .status-triangle::after {
+              background-image: $triangle-5;
+            }
+          }
+
+          &:nth-child(8n+6) {
+            .status-name {
+              background-image: $status-gradient-6;
+            }
+            .status-triangle::after {
+              background-image: $triangle-6;
+            }
+          }
+
+          &:nth-child(8n+7) {
+            .status-name {
+              background-image: $status-gradient-7;
+            }
+            .status-triangle::after {
+              background-image: $triangle-7;
+            }
+          }
+
+          &:nth-child(8n+8) {
+            .status-name {
+              background-image: $status-gradient-8;
+            }
+            .status-triangle::after {
+              background-image: $triangle-8;
+            }
+          }
+        }
+        &.current .status-name {
+          color: #fff;
+          font-weight: bold;
+        }
+
+        &:hover .status-name, &:hover .status-triangle::after {
+          background-color: darken($light-gray, 10%);
+        }
+
+      }
+    }
+    .basic-info {
+      display: flex;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    .lead-card {
+      padding: 20px;
+      .lead-block {
+        display: flex;
+        align-items: center;
+        .form-control{
+          width: auto;
+        }
+        .block-label {
+          width: 115px;
+        }
+      }
+      &.half-block {
+        width: 50%;
+      }
+    }
+  }
+
+  .history-button {
+    margin-top: 30px;
+  }
+  .lead-history {
+    margin-top: 30px;
+    .history-header {
+      display: flex;
+      justify-content: space-between;
+    }
+    .history-logs {
+      //position: relative;
+      .history-log {
+        display: flex;
+        margin-top: 20px;
+        position: relative;
+        .log-circle {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background-color: $purple;
+          margin-right: 30px;
+          margin-top: 10px;
+          &::after {
+            content: '';
+            width: 0;
+            height: 100%;
+            border: 1px solid $light-gray;
+            position: absolute;
+            left: 9px;
+            top: 30px;
+          }
+        }
+        .log-block {
+          padding: 10px 20px;
+          div {
+            margin-bottom: 7px;
+          }
+          .log-name {
+            font-weight: bold;
+          }
+          .log-date {
+          }
+        }
+        &:last-child {
+          .log-circle::after {
+            border: none;
+
+          }
+        }
+      }
+    }
+  }
+}
